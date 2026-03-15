@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using OrderService.Api.Domain.Repositories;
-using OrderService.Api.Infrastructure.Data;
+using OrderService.Infrastructure.Data;
 using OrderService.Api.Infrastructure.Repositories;
 using MassTransit;
 using OrderService.Api.Application.Services;
@@ -15,10 +15,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<AppDbContext>(options => 
+builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(
         builder.Configuration.GetConnectionString("DefaultConnection"),
-        o => o.EnableRetryOnFailure()
+        npgsql =>
+        {
+            npgsql.MigrationsAssembly("OrderService.Infrastructure");
+            npgsql.EnableRetryOnFailure();
+        }
     ));
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IOrderApplicationService, OrderApplicationService>();

@@ -1,6 +1,6 @@
 ﻿using MassTransit;
 using Microsoft.EntityFrameworkCore;
-using OrderService.Api.Infrastructure.Data;
+using OrderService.Infrastructure.Data;
 using OrderService.Shared.Events;
 
 namespace OrderService.Worker.Consumers
