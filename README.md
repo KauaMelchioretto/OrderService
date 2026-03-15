@@ -8,6 +8,8 @@ Este projeto é um serviço de pedidos construído com .NET 8 e .NET Core, utili
 - Docker
 - Docker Compose
 
+Caso não tenha instalado, consulte o link (para windows): https://docs.docker.com/desktop/setup/install/windows-install/
+
 ### Passos
 1. Clone o repositório.
 2. Navegue até a pasta raiz do projeto (onde está o `docker-compose.yml`).
