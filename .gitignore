@@ -1,0 +1,21 @@
+# .NET
+bin/
+obj/
+*.user
+*.tmp
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.tmp
+
+# Docker
+.dockerignore
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
